@@ -1,24 +1,33 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 class Employee
 {
-    int start = 0;
-    int end = size - 1;
-    int mid = start + (end - start) / 2;
-
 public:
-    string name;
-    string company;
-    int age;
+    string Name;
+    string Company;
+    int Age;
 
-} deta;
+    void Introduce()
+    {
+        cout << "Name-> " << Name << endl;
+        cout << "Company-> " << Company << endl;
+        cout << "age-> " << Age << endl;
+    }
+
+    Employee(string name, string company, int age)
+    {
+        Name = name;
+        Company = company;
+        Age = age;
+    }
+};
 
 int main()
 {
-    int arr[5] = {7, 9, 1, 2, 3};
-    int result = pivot(arr, 5);
+    Employee deta1 = Employee("Suyan", "Startup", 13);
+    deta1.Introduce();
 
-    cout << "Pivot element at Index: " << result << endl;
+    Employee deta2 = Employee("Harry", "Enddown", 30);
+    deta2.Introduce();
 }
