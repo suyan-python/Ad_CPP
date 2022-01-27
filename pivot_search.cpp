@@ -1,7 +1,9 @@
+//Pivot search in rotated sorted array
+
 #include <iostream>
 using namespace std;
 
-int Findpivot(int arr[], int size)
+int findPivot(int arr[], int size)
 {
     int start = 0;
     int end = size - 1;
@@ -9,7 +11,7 @@ int Findpivot(int arr[], int size)
 
     while (start < end)
     {
-        if (arr[mid] >= 0)
+        if (arr[mid] >= arr[0])
         {
             start = mid + 1;
         }
@@ -22,10 +24,11 @@ int Findpivot(int arr[], int size)
     return start;
 }
 
-int binary(int arr[], int size, int key)
+int binary(int arr[], int s, int e, int key)
 {
-    int start = 0;
-    int end = size - 1;
+
+    int start = s;
+    int end = e;
     int mid = start + (end - start) / 2;
 
     while (start <= end)
@@ -36,11 +39,11 @@ int binary(int arr[], int size, int key)
         }
         else if (arr[mid] > key)
         {
-            start = mid + 1;
-        }
-        else if (arr[mid] < key)
-        {
             end = mid - 1;
+        }
+        else
+        {
+            start = mid + 1;
         }
         mid = start + (end - start) / 2;
     }
@@ -49,26 +52,22 @@ int binary(int arr[], int size, int key)
 
 int findPosition(int arr[], int size, int key)
 {
-    int pivot = Findpivot(arr, size);
+    int pivot = findPivot(arr, size);
 
-    //BS on second line
-    if (key >= arr[pivot] && key < arr[size])
+    if (key >= arr[pivot] && key <= arr[size - 1])
     {
-        return binary(arr, size, key);
+        return binary(arr, pivot, size - 1, key);
     }
-
     else
     {
-        return binary(arr, size, key);
+        return binary(arr, 0, pivot - 1, key);
     }
 }
 
 int main()
 {
     int arr[5] = {7, 9, 1, 2, 3};
-    int result = findPosition(arr, 5, 2);
 
-    cout << "Index: " << result << endl;
-
-    return 0;
+    int ans = findPosition(arr, 5, 1);
+    cout << "Position at: " << ans << endl;
 }
