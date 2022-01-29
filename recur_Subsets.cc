@@ -35,10 +35,14 @@ int main()
 {
     Solution stl;
     vector<int> nums;
-    nums.push_back(1);
-    nums.push_back(2);
-    nums.push_back(3);
+    // nums.push_back(1);
+    // nums.push_back(2);
+    // nums.push_back(3);
 
+    for (int i = 1; i <= 3; i++)
+    {
+        nums.push_back(i);
+    }
     int n = nums.size();
 
     stl.subsets(nums);

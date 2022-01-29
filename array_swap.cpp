@@ -26,14 +26,14 @@ void printArray(int arr[], int n)
 int main()
 {
     int arr[5] = {1, 2, 3, 4, 5};
-    cout<<"Given array"<<endl;
+    cout << "Given array" << endl;
     for (int i = 0; i < 5; i++)
     {
         cout << arr[i] << " ";
     }
 
     reverse(arr, 5);
-    cout<<"\nAfter reverse"<<endl;
+    cout << "\nAfter reverse" << endl;
     printArray(arr, 5);
 
     return 0;

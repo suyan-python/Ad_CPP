@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// //Sum of elements in array
+// // Sum of elements in array
 // int arr(int num)
 // {
 //     int ele[20];
@@ -36,7 +36,7 @@ int main()
     // cin >> num;
 
     // arr(num);
-//***********************************************---------------------------------
+    //***********************************************---------------------------------
 
     // // LINEAR SEARCH
 
