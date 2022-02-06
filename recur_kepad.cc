@@ -1,21 +1,21 @@
-// phone Keypad
-
 #include <iostream>
 #include <string.h>
 #include <vector>
+
 using namespace std;
 
-class Keypad
+class Solution
 {
-
 private:
     void solve(string digits, string output, int index, vector<string> &ans, string mapping[])
     {
+
         if (index >= digits.length())
         {
             ans.push_back(output);
             return;
         }
+
         int number = digits[index] - '0';
         string value = mapping[number];
 
@@ -28,7 +28,7 @@ private:
     }
 
 public:
-    vector<string> letterCombination(string &digits)
+    vector<string> letterCombinations(string digits)
     {
         vector<string> ans;
 
@@ -40,23 +40,19 @@ public:
         string mapping[10] = {" ", " ", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
         solve(digits, output, index, ans, mapping);
-        for (int i = 0; i <= sizeof(mapping); i++)
-        {
-            cout << ans[i] << " ";
-        }
-        cout << endl;
+
         return ans;
     }
 };
 
 int main()
 {
-    Keypad key;
+    Solution delta;
     string digits = "23";
-    key.letterCombination(digits);
-    // for (int i = 0; i < digits.length(); i++)
-    // {
-    //     cout << digits[i] << " ";
-    // }
+    delta.letterCombinations(digits);
+    for (int i = 0; i < digits.size(); i++)
+    {
+        cout << digits << " ";
+    }
     cout << endl;
 }
