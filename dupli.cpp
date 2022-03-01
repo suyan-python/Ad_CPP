@@ -23,7 +23,7 @@ int remove(int arr[], int size)
 
 int main()
 {
-    int num[6] = {1, 2, 3, 4, 5, 5};
+    int num[6] = {2, 2, 4, 4, 5, 5};
     remove(num, 6);
     return 0;
 }

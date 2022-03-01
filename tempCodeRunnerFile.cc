@@ -1,2 +1,2 @@
-ans = mid;
-    s = 
+insertAtHead(head, 12);
+    

@@ -24,6 +24,4 @@ int main()
     {
         cout << "Not Palidrome" << endl;
     }
-
-    return 0;
 }

@@ -2,9 +2,11 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
+
 using namespace std;
 #define empty 0
 #define N 9
+
 bool isGridSafe(int grid[N][N], int row, int col, int num);
 bool isEmptyLocation(int grid[N][N], int &row, int &col);
 /* assign values to all the zero (not assigned) values for Sudoku solution
@@ -53,7 +55,7 @@ bool UsedInCol(int grid[N][N], int pcol, int number)
         else
             return false;
 }
-//Check if the entry used already in the grid box
+// Check if the entry used already in the grid box
 bool UsedInBox(int grid[N][N], int boxBeginRow, int boxBeginCol, int number)
 {
     bool tf = false;

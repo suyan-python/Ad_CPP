@@ -1,1 +1,2 @@
-int main()
+num = generateNum(n);
+    cout
