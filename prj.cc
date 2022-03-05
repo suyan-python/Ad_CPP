@@ -50,10 +50,12 @@ bool UsedInRow(int grid[N][N], int prow, int number)
 bool UsedInCol(int grid[N][N], int pcol, int number)
 {
     for (int row = 0; row < N; row++)
+    {
         if (grid[row][pcol] == number)
             return true;
         else
             return false;
+    }
 }
 // Check if the entry used already in the grid box
 bool UsedInBox(int grid[N][N], int boxBeginRow, int boxBeginCol, int number)
@@ -84,17 +86,17 @@ void printResult(int finalgrid[N][N])
 /* Main */
 int main()
 {
-    int grid[N][N] = {{0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 3, 0, 8, 5},
-                      {0, 0, 1, 0, 2, 0, 0, 0, 0},
+    int grid[N][N] = {{2, 0, 0, 0, 0, 4, 0, 0, 0},
+                      {7, 0, 4, 0, 0, 8, 0, 0, 0},
+                      {6, 0, 0, 0, 0, 0, 0, 7, 9},
 
-                      {0, 0, 0, 5, 0, 7, 0, 0, 0},
-                      {0, 0, 4, 0, 0, 0, 1, 0, 0},
-                      {0, 9, 0, 0, 0, 0, 0, 0, 0},
+                      {0, 0, 6, 0, 0, 0, 3, 0, 0},
+                      {4, 0, 0, 2, 0, 6, 0, 0, 0},
+                      {0, 5, 1, 0, 0, 0, 0, 0, 6},
 
-                      {5, 0, 0, 0, 0, 0, 0, 7, 3},
-                      {0, 0, 2, 0, 1, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 4, 0, 0, 0, 9}};
+                      {0, 0, 8, 4, 0, 0, 0, 0, 0},
+                      {0, 0, 0, 0, 1, 0, 6, 0, 7},
+                      {0, 0, 7, 0, 8, 0, 0, 5, 0}};
 
     if (SolveSudoku(grid) == true)
         printResult(grid);
